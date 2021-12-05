@@ -1,5 +1,5 @@
 import csv
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -12,6 +12,14 @@ with open('file.csv', 'w', newline='') as csvfile:
     for x in data:
         writer.writerow(x)
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def select():
+    if request.method == "POST":
+        data2 = request.form
+        currency = data2.get("id")
+        sell = (data["ask"])
+        amount = data2.get("ilosc")
+        razem = sell * amount
+        return razem
+
     return render_template("waluta.html")
