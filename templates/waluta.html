@@ -7,29 +7,33 @@
     <title>Waluty</title>
 </head>
 <body>
-    <from>
-    <label for="waluta">Wybierz walute:</label>
+    <from action="app.py/">
 
-    <select name="waluta" id="waluty">
-    <option value="USD">dolar amerykański</option>
-    <option value="AUD">dolar australijski</option>
-    <option value="CAD">dolar kanadyjski</option>
-    <option value="EUR">euro</option>
-    <option value="HUF">forint (Węgry)</option>
-    <option value="CHF">frank szwajcarski</option>
-    <option value="GBP">funt szterling</option>
-    <option value="JPY">jen (Japonia)</option>
-    <option value="CZK">korona czeska</option>
-    <option value="DKK">korona duńska</option>
-    <option value="NOK">korona norweska</option>
-    <option value="SEK">korona szwedzka</option>
-    <option value="XDR">SDR</option>
+    <label for="code">Wybierz walute:</label>
+
+    <select name="code" id="code">
+    <option value="USD">USD</option>
+    <option value="AUD">AUD</option>
+    <option value="CAD">CAD</option>
+    <option value="EUR">EUR</option>
+    <option value="HUF">HUF</option>
+    <option value="CHF">CHF</option>
+    <option value="GBP">GBP</option>
+    <option value="JPY">JPY</option>
+    <option value="CZK">CZK</option>
+    <option value="DKK">DKK</option>
+    <option value="NOK">NOK</option>
+    <option value="SEK">SEK</option>
+    <option value="XDR">XDR</option>
     </select>
     <br>
-    <label>Podaj ilość waluty jaką chcesz kupić</label>
-    <input type="number" name="ilosc">
+    <label for="amount">Ilość do zakupu:</label>
+    <input type="number" name="amount">
     <br>
     <button type="submit">Przelicz</button>
     </from>
+    <br><br><br>
+    <label>Kwota do zapłaty w PLN to:</label>
+    <textarea id="result"></textarea>  
 </body>
 </html>

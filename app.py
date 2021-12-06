@@ -11,15 +11,15 @@ with open('file.csv', 'w', newline='') as csvfile:
     writer.writeheader()
     for x in data:
         writer.writerow(x)
+    wiersze = [wiersz for wiersz in csvfile]
 
-@app.route("/", methods=["GET", "POST"])
-def select():
-    if request.method == "POST":
-        data2 = request.form
-        currency = data2.get("id")
-        sell = (data["ask"])
-        amount = data2.get("ilosc")
-        razem = sell * amount
-        return razem
+@app.route("/", methods =["GET", "POST"])
+def calculate():
+        result = 0
+        if request.method == "POST":
+            amount = request.form["amount"]
+            for  rate in csvfile:
+                if rate['code'] == request.form['code']:
+                    result = round((float(rate['ask'])) * float(amount), 2)
 
-    return render_template("waluta.html")
+    return render_template("waluta.html",code=code,result=result)
