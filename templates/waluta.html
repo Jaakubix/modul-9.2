@@ -7,7 +7,7 @@
     <title>Waluty</title>
 </head>
 <body>
-    <from action="app.py/">
+    <form method="POST">
 
     <label for="code">Wybierz walute:</label>
 
@@ -31,9 +31,13 @@
     <input type="number" name="amount">
     <br>
     <button type="submit">Przelicz</button>
-    </from>
+    </form>
+
     <br><br><br>
     <label>Kwota do zapłaty w PLN to:</label>
-    <textarea id="result"></textarea>  
+    {{result}}
+
+    <br><br><br>
+    <p>Jeśli chcesz zapisać dane o walutach do pliki kliknij <a href="/zapis">tutaj</a></p>
 </body>
 </html>
